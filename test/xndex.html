@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript" />
+  <meta name="author" comtent="Nomad Coders" />
+  <meta name="description" content="Welcom to my Kakao Clone" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- (1)제목 에드이벤트리스너 -->
+  <h2 class="js-addevent">Hello!</h2>
+  <!-- (3)newDate로 현재 시간과 크리스마스까지의 남은 시간 setInterval로 주기적실행 -->
+  <h3 class="js-time"></h3>
+  <!-- (4)셀렉트 에드이벤트리스너 로컬스토리지 저장 -->
+  <select class="js-select">
+    <option value="">--- Choose Your Country ---</option>
+    <option value="KR">Korea</option>
+    <option value="GE">Greece</option>
+    <option value="TK">Turkey</option>
+    <option value="FL">Finland</option>
+  </select>
+
+  <!-- (1)제목 에드이벤트리스너 -->
+  <script src="addEventListener.js"></script>
+  <!-- (2)리사이즈 이벤트리스너 if(윈도우넓이)에 따른 classList.toggle-->
+  <script src="resizeIf.js"></script>
+  <!-- (3)newDate로 현재 시간과 크리스마스까지의 남은 시간 setInterval로 주기적실행 -->
+  <script src="newDate.js"></script>
+  <!-- (4)셀렉트 이벤트리스너 로컬스토리지 저장 -->
+  <script src="select_localStorage.js"></script>
+</body>
+
+</html>

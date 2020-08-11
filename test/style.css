@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+}
+
+.normal {
+  background-color: #9b59b6;
+}
+
+.big {
+  background-color: #f39c12;
+}
+
+.small {
+  background-color: #3498db;
+}

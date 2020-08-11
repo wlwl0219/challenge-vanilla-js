@@ -1,32 +1,48 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript" />
-    <meta name="author" comtent="Nomad Coders" />
-    <meta name="description" content="Welcom to my Kakao Clone" />
-    <title>Document</title>
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="js-clock">
-      <h1 class="js-title"></h1>
-      <h3 class="js-time"></h3>
-    </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="keywords" content="HTML, CSS, XML, XHTML, JavaScript" />
+  <meta name="author" comtent="Nomad Coders" />
+  <meta name="description" content="Welcom to my Kakao Clone" />
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+
+  <div>
+    <h1>시간을 보여줘</h1>
+    <h3 class="js-time"></h3>
+  </div>
+
+  <div>
+    <h1>이름을 알려줘</h1>
     <form class="js-form form">
       <input type="text" placeholder="What is your name" />
     </form>
     <h4 class="js-greetings greetings"></h4>
-    <h1>Where are you from?</h1>
-    <!-- <select class="js-select">
-      <option value="">--- Choose Your Country ---</option>
-      <option value="KR">Korea</option>
-      <option value="GE">Greece</option>
-      <option value="TK">Turkey</option>
-      <option value="FL">Finland</option>
-    </select>
-      <script src="select.js"></script> -->
-    <script src="clock.js"></script>
-    <script src="gretting.js"></script>
-  </body>
+  </div>
+
+  <div>
+    <h1>할일을 알려줘</h1>
+    <form class="js-toDoForm">
+      <input type="text" placeholder="Write a todo" />
+    </form>
+    <h4>할일</h4>
+    <ul class="js-toDoList"></ul>
+    <h4>완료</h4>
+    <ul class="js-finishList"></ul>
+  </div>
+
+  <!-- 여기서부턴 스크립트!!!!!!!!!!! -->
+  <!-- (1)시간 보이기 -->
+  <script src="clock.js"></script>
+  <!-- (2)이름 보이기 -->
+  <script src="gretting.js"></script>
+  <!-- (3)할일 보이기 -->
+  <script src="todo.js"></script>
+</body>
+
 </html>
