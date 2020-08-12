@@ -13,3 +13,11 @@ body {
 .small {
   background-color: #3498db;
 }
+
+.play {
+  display: inline;
+}
+
+.num {
+  width: 50px;
+}
