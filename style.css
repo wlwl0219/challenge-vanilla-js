@@ -1,10 +1,33 @@
+/* 클래스 변경에 따른 배경색 변화 */
+.normal {
+  background-color: #9b59b6;
+}
+
+.big {
+  background-color: #f39c12;
+}
+
+.small {
+  background-color: #3498db;
+}
+
+/* 클래스 변경에 따른 display 변화 */
 .form,
-.greetings {
+.name {
   display: none;
 }
 
 .showing {
   display: block;
+}
+
+
+.play {
+  display: inline;
+}
+
+.num {
+  width: 50px;
 }
 
 /* body {
@@ -19,7 +42,7 @@
 .clicked {
   color: #7f8c8d;
 } */
-@keyframes fadeIn {
+/* @keyframes fadeIn {
   from {
     opacity: 0;
   }
@@ -37,4 +60,4 @@
   height: 100%;
   z-index: -1;
   animation: fadeIn 0.5s linear;
-}
+} */

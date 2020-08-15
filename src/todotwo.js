@@ -1,16 +1,15 @@
-const toDoForm = document.querySelector(".js-toDoForm"),
-    toDoInput = toDoForm.querySelector("input"),
-    toDoList = document.querySelector(".js-toDoList"),
+const todoForm = document.querySelector(".js-todoForm"),
+    todoInput = todoForm.querySelector("input"),
+    todoList = document.querySelector(".js-todoList"),
     finiList = document.querySelector(".js-finishList");
+
 const TODOS_LS = "PENDING";
-const FINISH_LS = "FINISHED"
-let toDos = []; // 배열 생성
+const FINISH_LS = "FINISHED";
+let toDos = [];
 let fiNish = [];
 
 function saveToDos() {
     localStorage.setItem(TODOS_LS, JSON.stringify(toDos));
-    // localStorage에는 자바스크립트의 데이타를 저장할 수 없음
-    // 오직 스트링만 저장함
 }
 
 function saveFinish() {
@@ -19,8 +18,7 @@ function saveFinish() {
 
 function deleteToDo(event) {
     const li = event.target.parentNode;
-    toDoList.removeChild(li);
-    // 실제 데이터도 지우고 다시 로컬저장
+    todoList.removeChild(li);
     toDos = toDos.filter(function (toDo) {
         return toDo.id !== Number(li.id);
     });
@@ -30,7 +28,6 @@ function deleteToDo(event) {
 function deleteFinish(event) {
     const li = event.target.parentNode;
     finiList.removeChild(li);
-    // 실제 데이터도 지우고 다시 로컬저장
     fiNish = fiNish.filter(function (toDo) {
         return toDo.id !== Number(li.id);
     });
@@ -41,16 +38,18 @@ function moveTodo(event) {
     deleteToDo(event);
     const li = event.target.parentNode;
     const text = li.querySelector("span").innerText;
-    finishToDo(text)
+    finishToDo(text);
 }
 
 function movefinish(event) {
     deleteFinish(event);
     const li = event.target.parentNode;
     const text = li.querySelector("span").innerText;
-    paintToDo(text)
+    paintToDo(text);
 }
 
+// 할일 목록 ele먼트와 객체를 생성하고 배열에 추가
+// JSON데이터로 변환해 로컬스토리지에 저장
 function paintToDo(text) {
     const li = document.createElement("li");
     const delBtn = document.createElement("button");
@@ -62,12 +61,11 @@ function paintToDo(text) {
     checkBtn.innerText = "✅";
     checkBtn.addEventListener("click", moveTodo);
     span.innerText = text;
-    li.id = newId; // li 에 아이디 추가?
+    li.id = newId;
     li.appendChild(span);
     li.appendChild(delBtn);
     li.appendChild(checkBtn);
-    toDoList.appendChild(li);
-    // 객체를 만들어 배열에 넣어준다
+    todoList.appendChild(li);
     const toDoObj = {
         id: newId,
         text: text
@@ -76,6 +74,8 @@ function paintToDo(text) {
     saveToDos();
 }
 
+// 완료 목록 ele먼트와 객체를 생성하고 배열에 추가
+// JSON데이터로 변환해 로컬스토리지에 저장
 function finishToDo(text) {
     const fli = document.createElement("li");
     const fdelBtn = document.createElement("button");
@@ -95,18 +95,21 @@ function finishToDo(text) {
     const finiObj = {
         id: newId,
         text: text
-    }
+    };
     fiNish.push(finiObj);
     saveFinish()
 }
 
+// 인풋 이벤트 발생시 이전 이벤트는 지우고
+// 할일 목록에 추가, 인풋은 삭제
 function handleSubmit(event) {
     event.preventDefault();
-    const currentValue = toDoInput.value;
+    const currentValue = todoInput.value;
     paintToDo(currentValue);
-    toDoInput.value = "";
+    todoInput.value = "";
 }
 
+// 로컬스토리지에 완료 목록이 있다면 js테이터로 변환 및 html 추가
 function loadFinish() {
     const loadedFinished = localStorage.getItem(FINISH_LS);
     if (loadedFinished) {
@@ -117,10 +120,10 @@ function loadFinish() {
     }
 }
 
+// 로컬스토리지에 할일 목록이 있다면 js테이터로 변환 및 html 추가
 function loadToDos() {
     const loadedToDos = localStorage.getItem(TODOS_LS);
     if (loadedToDos) {
-        // 투두가 있다면 다시 데이터 변환해서 하나씩 꺼내 칠하자
         const parsedToDos = JSON.parse(loadedToDos);
         parsedToDos.forEach(function (ele) {
             paintToDo(ele.text);
@@ -131,7 +134,7 @@ function loadToDos() {
 function init() {
     loadToDos();
     loadFinish();
-    toDoForm.addEventListener("submit", handleSubmit);
+    todoForm.addEventListener("submit", handleSubmit);
 }
 
 init();

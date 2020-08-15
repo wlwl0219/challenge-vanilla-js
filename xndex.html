@@ -3,16 +3,20 @@
 
 <head>
   <meta charset="UTF-8" />
+  <meta name="keywords" content="HTML, CSS, JavaScript" />
+  <meta name="author" comtent="Ji Eun" />
+  <meta name="description" content="Welcom to my test" />
   <title>Document</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
-  <!-- (1)제목 에드이벤트리스너 -->
-  <h2 class="js-addevent">Hello!</h2>
-  <!-- (3)newDate로 현재 시간과 크리스마스까지의 남은 시간 setInterval로 주기적실행 -->
-  <h3 class="js-time"></h3>
-  <!-- (4)셀렉트 에드이벤트리스너 로컬스토리지 저장 -->
+  <!-- (1)텍스트, 스타일, 클래스 변경 이벤트리스너 -->
+  <h2 class="js-addevent">Hello! This will change</h2>
+  <!-- (2)newDate로 현재 시간과 크리스마스까지의 남은 시간 setInterval로 주기적실행 -->
+  <h2 class="js-timexmas"></h2>
+  <h2 class="js-timecurr"></h2>
+  <!-- (3)셀렉트 에드이벤트리스너 로컬스토리지 저장 -->
   <select class="js-select">
     <option value="">--- Choose Your Country ---</option>
     <option value="KR">Korea</option>
@@ -20,17 +24,23 @@
     <option value="TK">Turkey</option>
     <option value="FL">Finland</option>
   </select>
-  <!-- (5) -->
+  <!-- (4)인풋텍스트 이벤트리스너 로컬스토리지 저장 -->
+  <form class="js-form form">
+    <input type="text" placeholder="What is your name" />
+  </form>
+  <h4 class="js-name name"></h4>
+  <!-- (5)인풋텍스트 이벤트리스너 두개의 로컬스토리지 저장 및 교환-->
   <div>
-    <h1>할일을 알려줘</h1>
-    <form class="js-toDoForm">
+    <form class="js-todoForm">
       <input type="text" placeholder="Write a todo" />
     </form>
     <h4>할일</h4>
-    <ul class="js-toDoList"></ul>
+    <ul class="js-todoList"></ul>
     <h4>완료</h4>
     <ul class="js-finishList"></ul>
   </div>
+
+
   <!-- (6) -->
   <div>
     <h1>Random Number Game</h1>
@@ -78,16 +88,18 @@
     <span></span>
   </div> -->
 
-  <!-- (1)제목 에드이벤트리스너 -->
-  <!-- <script src="addEventListener.js"></script>
-  <!-- (2)리사이즈 이벤트리스너 if(윈도우넓이)에 따른 classList.toggle-->
-  <!-- <script src="resizeIf.js"></script>
-  <!-- (3)newDate로 현재 시간과 크리스마스까지의 남은 시간 setInterval로 주기적실행 -->
-  <!-- <script src="newDate.js"></script> -->
-  <!-- (4)셀렉트 이벤트리스너 로컬스토리지 저장 -->
-  <!-- <script src="select_localStorage.js"></script>  -->
-  <!-- (5) -->
-  <!-- <script src="todotwo.js"></script> -->
+  <!-- (1)텍스트, 스타일, 클래스 변경 이벤트리스너 -->
+  <script src="src/varietyEvent.js"></script>
+  <!-- (2)newDate로 현재 시간과 크리스마스까지의 남은 시간 setInterval로 주기적실행 -->
+  <script src="src/newDate.js"></script>
+  <!-- (3)셀렉트 이벤트리스너 로컬스토리지 저장 -->
+  <script src="src/selectlocal.js"></script>
+  <!-- (4)인풋텍스트 이벤트리스너 로컬스토리지 저장 -->
+  <script src="src/name.js"></script>
+  <!-- (5)인풋텍스트 이벤트리스너 두개의 로컬스토리지 저장 및 교환-->
+  <script src="src/todotwo.js"></script>
+
+
   <!-- (6) -->
   <script src="random.js"></script>
 </body>

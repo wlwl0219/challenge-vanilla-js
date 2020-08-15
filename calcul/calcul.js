@@ -61,6 +61,31 @@ class Calculator {
             this.preElement.textContent = ''
         }
     }
+
+    // // 숫자 하나만 지우기
+    // delete() {
+    //     this.currentOperand = this.currentOperand.toString().slice(0, -1)
+    // }
+
+    // // 숫자 쉽표 표시
+    // getDisplayNumber(number) {
+    //     const stringNumber = number.toString()
+    //     const integerDigits = parseFloat(stringNumber.split('.')[0])
+    //     const decimalDigits = stringNumber.split('.')[1]
+    //     let integerDisplay
+    //     if (isNaN(integerDigits)) {
+    //         integerDisplay = ''
+    //     } else {
+    //         integerDisplay = integerDigits.toLocaleString('en', {
+    //             maximumFractionDigits: 0
+    //         })
+    //     }
+    //     if (decimalDigits != null) {
+    //         return `${integerDisplay}.${decimalDigits}`
+    //     } else {
+    //         return integerDisplay
+    //     }
+    // }
 }
 
 const numBtn = document.querySelectorAll(".js-numbtn");
@@ -69,6 +94,11 @@ const resetBtn = document.querySelector(".js-resetbtn");
 const equalBtn = document.querySelector(".js-equalbtn");
 const preResult = document.querySelector(".js-preresult")
 const curResult = document.querySelector(".js-curresult")
+// const deleteButton = document.querySelector("") // 숫자 하나씩 지우는 버튼
+// deleteButton.addEventListener('click', button => {
+//     calculator.delete()
+//     calculator.updateDisplay()
+// })
 const calculator = new Calculator(preResult, curResult)
 
 function resetEvent() {
